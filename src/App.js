@@ -6,6 +6,10 @@ class App extends React.Component {
     console.log("I'm constructor");
   }
   
+  componentDidMount() {
+    console.log("Component rendered");
+  }
+
   render() {
     console.log("I'm rendering");
     return (
