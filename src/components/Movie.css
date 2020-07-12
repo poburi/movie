@@ -4,24 +4,27 @@
   /* 컨텐츠 박스 height 핏하게 (각 영역마다 다르게) */
   /* align-items: flex-start;  */
   flex-wrap: wrap;
-  padding: 50px;
-  padding-top: 70px;
-  width: 80%;
-  margin: 0 auto;
 }
 
-.movies .movie {
+.movie {
   width: 45%;
   background-color: white;
   margin-bottom: 70px;
   font-weight: 300;
   padding: 20px;
-  display: flex;
   color: #adaeb9;
-  align-items: flex-start;
-  justify-content: space-between;
+
   border-radius: 5px;
   box-shadow: 0 13px 27px -5px rgba(50, 50, 90, 0.25);
+}
+
+.movie,
+.movie a {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
 }
 
 .movie img {
@@ -47,6 +50,7 @@
 .movie .movie__year,
 .movie .movie__genres {
   opacity: 0.5;
+  flex-wrap: wrap;
 }
 
 .movie .movie__genres {
@@ -60,4 +64,36 @@
 .movie__genres li {
   margin-right: 10px;
   font-size: 14px;
+}
+
+/* movie detail */
+.movie-detail {
+  height: 100%;
+  padding: 0 40px;
+}
+
+.movie-detail .movie {
+  width: 100%;
+}
+
+@media (max-width: 950px) {
+  #root .container {
+    position: static;
+    width: auto;
+  }
+
+  .movie {
+    width: 100%;
+  }
+
+  .movie-detail .movie,
+  .movie a {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-detail .movie img,
+  .movie a img {
+    margin: 0;
+  }
 }
